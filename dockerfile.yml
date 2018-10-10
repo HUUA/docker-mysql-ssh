@@ -1,0 +1,15 @@
+version: '2'
+services:
+    docker-mysql-ssh:
+        build: .
+        hostname: docker-mysql-ssh
+        image: docker-mysql-ssh
+        volumes:
+          - ./app:/app
+          - ./mysql:/var/lib/mysql
+          - ./var_log:/var/log
+        ports:
+          - "2022:22"
+          - "2036:3306"
+        container_name: "docker-mysql-ssh"
+        entrypoint: /app/docker_start.sh
