@@ -19,7 +19,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server
 # 暴露端口
 EXPOSE 22 3306 
 
-# 制定挂载卷
+# 指定挂载卷
 VOLUME ["/var/lib/mysql", "/var/log/mysql"]
 
 # 容器启动命令
