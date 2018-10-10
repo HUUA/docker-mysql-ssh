@@ -1,6 +1,7 @@
-# A minimal configuration to set up a docker with Ubuntu 16.04 + SSH access + LAMP
-### How to Use:
-1. Modify `Dockerfile` to set up password for SSH
-1. Execute: `docker-compose up -d` (remove `-d` for foreground mode)
-2. Log into server: `ssh root@localhost -p 2022`
-2. Set up root password for mysql: `mysqladmin -u root password '<NEW_PASSWORD>'`
+### 部署方法:
+1. 运行自动创建`docker-compose.yml`的`python`文件：`python create_container.py`(文件需要修改)
+2. 启动容器: `docker-compose up -d`
+### tips:
+1. 删除所有镜像：`docker rmi $(docker images -aq)`
+2. 删除所有容器（不包括正在运行的容器）：`docker rm $(docker ps -aq)`
+3. 删除所有容器（包括正在运行的容器）：`docker rm -f $(docker ps -aq)`
